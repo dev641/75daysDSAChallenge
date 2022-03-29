@@ -1,11 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Solution {
+ class Solution {
 public:
     int count(int i,int j,vector<vector<int>>board){
         int count=0;
-        // board[i-1][j-1]+board[i-1][j]+board[i-1][j+1];
-        // +board[i][j-1]+board[i+1][j-1]
         if(board.size()==1){
              if(j==0)
                   return board[i][j+1];
@@ -78,6 +76,51 @@ public:
             }
         }
         board=res;
+    }
+};
+
+// Method 2
+class Solution {
+public:
+vector<int> x={-1,-1,-1,0,0,1,1,1};
+vector<int> y={-1,0,1,-1,1,-1,0,1};
+  int count2(int i,int j,vector<vector<int>>board){
+        int cnt=0;
+        for(int k=0;k<8;k++){
+            if(i+x[k]>=0 and j+y[k]>=0 and i+x[k]<board.size() and j+y[k]<board[0].size())
+              {
+                   if(board[i+x[k]][j+y[k]]==1|| board[i+x[k]][j+y[k]]==-1)
+                       cnt++;
+              }
+        }
+    }
+    void gameOfLife(vector<vector<int>>& board) {
+        vector<vector<int>>res=board;
+        if(board.size()==1 and board[0].size()==1)
+        {
+            board[0][0]=0;
+            return ;
+        }
+        
+        for(int i=0;i<board.size();i++){
+            for(int j=0;j<board[0].size();j++){
+                int cnt=count2(i,j,board);
+                if(board[i][j]==1 and (cnt<2||cnt>3))
+                    board[i][j]=-1;
+                else if(board[i][j]==0 and cnt==3)
+                    board[i][j]=-2;
+                
+            }
+        }
+        for(int i=0;i<board.size();i++){
+            for(int j=0;j<board[0].size();j++)
+              {
+                  if(board[i][j]==-1)
+                   board[i][j]=0;
+                  else if(board[i][j]==-2)
+                   board[i][j]=1;
+              }
+        }
     }
 };
 int main(){
