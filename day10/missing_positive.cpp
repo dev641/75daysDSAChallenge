@@ -20,15 +20,15 @@ public:
         // else if(nums.size()==1 and nums[0]==1)
         //     return 2;
         
-        // int mini=INT_MAX;
+        // long long mini=LLONG_MAX;
         // for(int i:nums)
         // {
-        //     mini=min(i,mini);
+        //     mini=min((long long)i,mini);
                 
         // }
         // if(mini<0){
         //     for(int i=0;i<nums.size();i++){
-        //     nums[i]+=abs(mini)+1;
+        //     (long long)nums[i]+=abs(mini)+1;
         // }
         // }
         // int n=nums.size();
@@ -42,6 +42,9 @@ public:
         //         if(nums[actual-1]<0){
         //             continue;
         //         }
+        //          if(nums[actual-1]==0)
+        //             nums[actual-1]=-1*(n+4);
+        //         else
         //         nums[actual-1]=-1*nums[actual-1];
         //     }
         // }
