@@ -47,28 +47,28 @@ public:
         return final;
     }
 };
-Node * create(vector<pair<int,int>>v){
- unordered_map<int,Node*>mp;
- Node *head=new Node(v[0].first);
- head->random=NULL;
- head->next=NULL;
- mp[0]=head;
- int i=1;
- while(i<v.size()){
-   Node *t= new Node(v[0].first);
-   t->random=NULL;
-   t->next=NULL;
-   mp[i++]=t;
- }
+// Node * create(vector<pair<int,int>>v){
+//  unordered_map<int,Node*>mp;
+//  Node *head=new Node(v[0].first);
+//  head->random=NULL;
+//  head->next=NULL;
+//  mp[0]=head;
+//  int i=1;
+//  while(i<v.size()){
+//    Node *t= new Node(v[0].first);
+//    t->random=NULL;
+//    t->next=NULL;
+//    mp[i++]=t;
+//  }
  
- return head;
-}
-int main(){
-    int n;
-    vector<pair<int,int>>v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i].first>>v[i].second;
-    }
-   Node *head= create(v);
+//  return head;
+// }
+// int main(){
+//     int n;
+//     vector<pair<int,int>>v(n);
+//     for(int i=0;i<n;i++){
+//         cin>>v[i].first>>v[i].second;
+//     }
+//    Node *head= create(v);
 
-}
+// }
