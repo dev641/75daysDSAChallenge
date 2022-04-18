@@ -1,5 +1,4 @@
-#include<bits/stdc++.h>
-using namespace std;
+
 class Solution {
 public:
     vector<string>spl(string s,string del=" "){
@@ -42,10 +41,3 @@ public:
         return res;
     }
 };
-int main(){
-    Solution ob;
-vector<string>str={"alice,20,800,mtv","alice,50,100,beijing"};
-vector<string>res=ob.invalidTransactions(str);
-
-return 0;
-}
